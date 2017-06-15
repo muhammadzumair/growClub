@@ -1,0 +1,19 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  DIST_PATH: "./dist/*"
+  DEPLOY_PATH: "/srv/growclub/stage/frontend"
+
+
+deploy:
+  script:
+    - "npm install"
+    - "GRAPHQL_SERVER=$GRAPHQL_SERVER npm run build"
+    - "rsync -rvL --progress --delete $DIST_PATH $DEPLOY_PATH"
+  stage: deploy
+  environment: Stage
+  allow_failure: false
+  only:
+    - master@growclub/frontend

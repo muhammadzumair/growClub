@@ -1,0 +1,33 @@
+// inspirovane z http://stackoverflow.com/questions/28343101/css-separator-with-text-in-middle
+:local(.wrap) {
+  padding: 20px 0;
+  position: relative;
+
+  h4 {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #9e9e9e;
+    font-weight: 200;
+
+    span {
+      background-color: #fff;
+      padding: 0 1rem;
+      display: inline-block;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      z-index: -1;
+      background: #ddd;
+    }
+  }
+}

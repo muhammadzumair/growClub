@@ -1,0 +1,28 @@
+@import '~flexboxgrid/css/flexboxgrid.css';
+
+$white: #fff;
+$base: #ccc;
+$buttons: #aa5536;
+$theme: #edf0f5;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $theme;
+}
+
+// sass-lint:disable force-pseudo-nesting
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px $white inset;
+}
+// sass-lint:enable force-pseudo-nesting
